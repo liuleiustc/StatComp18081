@@ -1,27 +1,26 @@
-#' @title using antithetic variables to generate samples from a Rayleigh distribution.
+#' @title generate samples from a Rayleigh distribution.
 #' @description Implement a function to generate samples from a Rayleigh distribution,using antithetic variables.
-#' @return return the percent reduction in variance of X+X' compared with X_1+X_2 for independent X_1,X_2
-#' @param R the number of points by random function
+#' @param x is the number of samples
+#' @param r is the number of random data by runif ()
+#' @return the vector of generating from the Rayleigh distribution.
 #' @export
 #' @examples
 #' \dontrun{
-#' m <- 1000
-#' Ray1 <- Ray2 <- numeric(m)
-#' for (i in 1:m) {
-#'   Ray1[i] <- Ray(R,FALSE)
-#'   Ray2[i] <- Ray(R,TRUE)
-#' }
-#'
-#' print(sd(Ray1))  # X1 and X2 is independent
-#' print(sd(Ray2))  # X1 and X2 is antithetic variables
-#' print((var(Ray1) - var(Ray2))/var(Ray1))  # the percent reduction in variance
+#' x <- seq(0.1, 2.5, length = 10)
+#' samples <- Ray(x)
 #' }
 
-Ray <- function(R){
-  u <- runif(R/2)
-  antithetic <- TRUE
-  if (!antithetic) v <- runif(R/2) else
-    v <- 1-u
-  u <- c(u,v)
-  return(mean(sqrt(-2*log(1-u))))
+Ray <- function(x, r = 10000){
+  antithetic = TRUE
+  y <- runif(r/2)
+  if(!antithetic) v <- runif(r/2)
+  else
+    v <- 1-y
+  y <- c(y, v)
+  cdf <- numeric(length(x))
+  for(i in 1:length(x)){
+    g <- (y*x[i]^2)*exp(-(y*x[i]^2)/(2*(2^2)))
+    cdf[i] <-  1/(2^2)*mean(g)
+  }
+  cdf
 }

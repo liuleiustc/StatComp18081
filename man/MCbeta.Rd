@@ -10,7 +10,7 @@ MCbeta(x)
 \item{x}{the number of points between 0 and 1}
 }
 \value{
-return the a Monte Carlo estimate and pbeta function in R for each x.
+the first value is Monte Carlo estimate;the second value is the pbeta estimate;the third value is the error of
 }
 \description{
 Write a function to compute a Monte Carlo estimate of the Beta(3, 3) cdf

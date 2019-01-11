@@ -2,30 +2,24 @@
 % Please edit documentation in R/Ray.R
 \name{Ray}
 \alias{Ray}
-\title{using antithetic variables to generate samples from a Rayleigh distribution.}
+\title{generate samples from a Rayleigh distribution.}
 \usage{
-Ray(R)
+Ray(x, r = 10000)
 }
 \arguments{
-\item{R}{the number of points by random function}
+\item{x}{is the number of samples}
+
+\item{r}{is the number of random data by runif ()}
 }
 \value{
-return the percent reduction in variance of X+X' compared with X_1+X_2 for independent X_1,X_2
+the vector of generating from the Rayleigh distribution.
 }
 \description{
 Implement a function to generate samples from a Rayleigh distribution,using antithetic variables.
 }
 \examples{
 \dontrun{
-m <- 1000
-Ray1 <- Ray2 <- numeric(m)
-for (i in 1:m) {
-  Ray1[i] <- Ray(R,FALSE)
-  Ray2[i] <- Ray(R,TRUE)
-}
-
-print(sd(Ray1))  # X1 and X2 is independent
-print(sd(Ray2))  # X1 and X2 is antithetic variables
-print((var(Ray1) - var(Ray2))/var(Ray1))  # the percent reduction in variance
+x <- seq(0.1, 2.5, length = 10)
+samples <- Ray(x)
 }
 }

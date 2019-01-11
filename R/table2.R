@@ -2,6 +2,7 @@
 #' @description make a faster version of table() for the case of an input of two integer vectors with no missing values
 #' @param x is a vector
 #' @param y is a vector
+#' @return a table
 #' @export
 #' @examples
 #' \dontrun{

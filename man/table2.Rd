@@ -11,6 +11,9 @@ table2(x, y)
 
 \item{y}{is a vector}
 }
+\value{
+a table
+}
 \description{
 make a faster version of table() for the case of an input of two integer vectors with no missing values
 }
