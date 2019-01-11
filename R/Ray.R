@@ -17,8 +17,9 @@
 #' print((var(Ray1) - var(Ray2))/var(Ray1))  # the percent reduction in variance
 #' }
 
-Ray <- function(R,antithetic = TRUE){
+Ray <- function(R){
   u <- runif(R/2)
+  antithetic <- TRUE
   if (!antithetic) v <- runif(R/2) else
     v <- 1-u
   u <- c(u,v)

@@ -4,7 +4,7 @@
 \alias{Ray}
 \title{using antithetic variables to generate samples from a Rayleigh distribution.}
 \usage{
-Ray(R, antithetic = TRUE)
+Ray(R)
 }
 \arguments{
 \item{R}{the number of points by random function}
