@@ -1,6 +1,6 @@
 ---
 title: "Introduction to StatComp"
-author: "Hong Zhang"
+author: "18081"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
