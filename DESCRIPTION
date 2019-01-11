@@ -1,0 +1,15 @@
+Package: StatComp18081
+Type: Package
+Title: Example functions for 'Statistical Computing' course
+Version: 0.1.0
+Author: 18081
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Imports: vcd,bootstrap,ggplot2,DAAG,RANN,boot,energy,Ball
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1
