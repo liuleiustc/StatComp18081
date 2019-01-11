@@ -13,3 +13,4 @@ Imports: vcd,bootstrap,ggplot2,DAAG,RANN,boot,energy,Ball
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
+URL: https://github.com/woshiershixiong/StatComp18081
